@@ -1,0 +1,250 @@
+.home-hub {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.home-intro {
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-intro h1 {
+  margin: 0 0 0.45rem 0;
+  font-size: 1.7rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.home-intro p {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+.section-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.section-label h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-label span,
+.section-label a {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.section-label a:hover {
+  text-decoration: underline;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.topic-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.topic-card-top h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.3;
+  color: var(--primary);
+}
+
+.topic-badge {
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--tertiary);
+  color: var(--secondary);
+}
+
+.topic-card p {
+  margin: 0 0 0.85rem 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--secondary);
+}
+
+.topic-link-hint {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.home-stream {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-row {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-row:last-child {
+  border-bottom: none;
+}
+
+.home-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.home-row-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.home-row-title a {
+  text-decoration: none;
+}
+
+.home-row-title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-row-date {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: var(--secondary);
+}
+
+.home-row-summary {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--secondary);
+  line-height: 1.5;
+  max-width: 66ch;
+}
+
+@media (max-width: 680px) {
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-row-top {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+.category-nav {
+  margin-top: 2rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+}
+
+.category-nav-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.category-nav-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.category-nav-head a {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.category-nav-head a:hover {
+  text-decoration: underline;
+}
+
+.category-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.category-nav-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.category-nav-list a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.category-nav-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.category-nav-list time {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
+
+.topic-card--empty {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.topic-card--empty:hover {
+  transform: none;
+  border-color: var(--border);
+}
+
+.topic-link-hint--muted {
+  color: var(--secondary);
+  font-weight: 500;
+}
