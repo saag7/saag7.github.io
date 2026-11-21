@@ -248,3 +248,14 @@
   color: var(--secondary);
   font-weight: 500;
 }
+
+#menu a[href*="x.com"] {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+#menu a[href*="x.com"]:hover {
+  opacity: 1;
+}
