@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.2fd9135862a3da866393a267370bb97cd812193a02eb63558b88b00f30ec3648.css" integrity="sha256-L9kTWGKj2oZjk6JnNwu5fNgSGToC62NVi4iwDzDsNkg=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5a537643f69e28a1f328aadbb91dce8029cbef942638689b3df2006d7c47d953.css" integrity="sha256-WlN2Q/aeKKHzKKrbuR3OgCnL75QmOGibPfIAbXxH2VM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -19,6 +19,7 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="rss">
+<link rel="alternate" type="application/json" href="http://localhost:1313/index.json" title="json">
 <link rel="alternate" hreflang="en" href="http://localhost:1313/">
 <noscript>
     <style>
@@ -97,10 +98,123 @@
             </div>
         </div>
         <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/sakoag" title="X">
+                    <span>X</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
-<main class="main"> 
+<main class="main"><div class="home-hub">
+  <header class="home-intro">
+    <h1>Welcome to My Blog</h1>
+    <p>Notes on systems engineering, machine learning, and practical tools—written as I build and test things.</p>
+  </header>
+
+  <section class="topic-directory" aria-label="Browse by Topic">
+    <div class="section-label">
+      <h2>Explore by Topic</h2>
+      <span>Select a category to view matching articles</span>
+    </div>
+
+    <div class="topic-grid">
+      <a class="topic-card" href="/tags/evals-tracing-observability/">
+        <div class="topic-card-top">
+          <h3>Evals, Tracing &amp; Observability</h3>
+          <span class="topic-badge">1</span>
+        </div>
+        <p>Automated test suites, agent trajectory tracing, latency/cost tracking, and failure analysis.</p>
+        <span class="topic-link-hint">Browse Evals, Tracing &amp; Observability →</span>
+      </a>
+      <div class="topic-card topic-card--empty" aria-disabled="true">
+        <div class="topic-card-top">
+          <h3>Context Engineering &amp; Memory Systems</h3>
+          <span class="topic-badge">0</span>
+        </div>
+        <p>Context window curation, long-run degradation, and working, episodic, semantic, and procedural memory.</p>
+        <span class="topic-link-hint topic-link-hint--muted">Articles coming soon</span>
+      </div>
+      <div class="topic-card topic-card--empty" aria-disabled="true">
+        <div class="topic-card-top">
+          <h3>Agentic RAG &amp; Knowledge Retrieval</h3>
+          <span class="topic-badge">0</span>
+        </div>
+        <p>Agentic retrieval routing, hybrid/graph-backed retrieval, and self-correction loops.</p>
+        <span class="topic-link-hint topic-link-hint--muted">Articles coming soon</span>
+      </div>
+      <div class="topic-card topic-card--empty" aria-disabled="true">
+        <div class="topic-card-top">
+          <h3>AI Security, Sandboxing &amp; Governance</h3>
+          <span class="topic-badge">0</span>
+        </div>
+        <p>Permissions, tool auditing, prompt-injection defense, and data boundaries for agents and MCP.</p>
+        <span class="topic-link-hint topic-link-hint--muted">Articles coming soon</span>
+      </div>
+      <div class="topic-card topic-card--empty" aria-disabled="true">
+        <div class="topic-card-top">
+          <h3>Local / Edge Models &amp; SLMs</h3>
+          <span class="topic-badge">0</span>
+        </div>
+        <p>Running compact models locally or on dedicated hardware, balancing cost, privacy, and latency.</p>
+        <span class="topic-link-hint topic-link-hint--muted">Articles coming soon</span>
+      </div>
+      <a class="topic-card" href="/tags/dev-tooling-cli-agents/">
+        <div class="topic-card-top">
+          <h3>Developer Tooling, CLI Agents &amp; Code Quality</h3>
+          <span class="topic-badge">1</span>
+        </div>
+        <p>Terminal-native coding agents, automated test/lint loops, and code/architecture verification.</p>
+        <span class="topic-link-hint">Browse Developer Tooling, CLI Agents &amp; Code Quality →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-recent" aria-label="Latest Posts">
+    <div class="section-label">
+      <h2>Latest Posts</h2>
+      <a href="/posts/">View all →</a>
+    </div>
+
+    <div class="home-stream">
+      <article class="home-row">
+        <div class="home-row-top">
+          <h3 class="home-row-title">
+            <a href="/posts/tracing-agent-trajectories/">Tracing Agent Trajectories and Catching Silent Tool Failures</a>
+          </h3>
+          <time class="home-row-date" datetime="2026-11-21">Nov 21, 2026</time>
+        </div>
+        <p class="home-row-summary">Why final-answer checks miss broken tool calls, and how step-level tracing and deterministic assertions catch regressions early.</p>
+      </article>
+    </div>
+  </section>
+</div>
     </main>
     
 <footer class="footer">

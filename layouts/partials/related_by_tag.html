@@ -1,0 +1,26 @@
+{{- if .Params.tags }}
+  {{- $currentPage := . }}
+  {{- $primaryTag := index .Params.tags 0 }}
+  {{- $related := where site.RegularPages "Permalink" "ne" .Permalink }}
+  {{- $related = where $related "Params.tags" "intersect" .Params.tags }}
+  {{- $related = $related.ByDate.Reverse }}
+
+  {{- if gt (len $related) 0 }}
+  <nav class="category-nav" aria-label="More articles in this category">
+    <div class="category-nav-head">
+      <h3>More in This Category</h3>
+      <a href="{{ printf "tags/%s/" ($primaryTag | urlize) | relLangURL }}">All in #{{ $primaryTag }} →</a>
+    </div>
+    <ul class="category-nav-list">
+      {{- range first 4 $related }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{- .Date | time.Format ":date_medium" -}}
+        </time>
+      </li>
+      {{- end }}
+    </ul>
+  </nav>
+  {{- end }}
+{{- end }}

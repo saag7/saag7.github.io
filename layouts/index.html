@@ -1,0 +1,82 @@
+{{- define "main" }}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where $pages "Params.hidden" "!=" true }}
+
+{{- $topics := slice
+  (dict "slug" "evals-tracing-observability" "label" "Evals, Tracing & Observability" "desc" "Automated test suites, agent trajectory tracing, latency/cost tracking, and failure analysis.")
+  (dict "slug" "context-engineering-memory" "label" "Context Engineering & Memory Systems" "desc" "Context window curation, long-run degradation, and working, episodic, semantic, and procedural memory.")
+  (dict "slug" "agentic-rag-retrieval" "label" "Agentic RAG & Knowledge Retrieval" "desc" "Agentic retrieval routing, hybrid/graph-backed retrieval, and self-correction loops.")
+  (dict "slug" "ai-security-governance" "label" "AI Security, Sandboxing & Governance" "desc" "Permissions, tool auditing, prompt-injection defense, and data boundaries for agents and MCP.")
+  (dict "slug" "local-edge-models-slms" "label" "Local / Edge Models & SLMs" "desc" "Running compact models locally or on dedicated hardware, balancing cost, privacy, and latency.")
+  (dict "slug" "dev-tooling-cli-agents" "label" "Developer Tooling, CLI Agents & Code Quality" "desc" "Terminal-native coding agents, automated test/lint loops, and code/architecture verification.")
+-}}
+
+<div class="home-hub">
+  <header class="home-intro">
+    <h1>{{ site.Params.homeInfoParams.Title | default site.Title }}</h1>
+    {{- with site.Params.homeInfoParams.Content }}
+    <p>{{ . | markdownify }}</p>
+    {{- end }}
+  </header>
+
+  <section class="topic-directory" aria-label="Browse by Topic">
+    <div class="section-label">
+      <h2>Explore by Topic</h2>
+      <span>Select a category to view matching articles</span>
+    </div>
+
+    <div class="topic-grid">
+      {{- range $topics }}
+      {{- $slug := .slug }}
+      {{- $matched := where $pages "Params.tags" "intersect" (slice $slug) }}
+      {{- $count := len $matched }}
+
+      {{- if gt $count 0 }}
+      <a class="topic-card" href="{{ printf "tags/%s/" $slug | relLangURL }}">
+        <div class="topic-card-top">
+          <h3>{{ .label }}</h3>
+          <span class="topic-badge">{{ $count }}</span>
+        </div>
+        <p>{{ .desc }}</p>
+        <span class="topic-link-hint">Browse {{ .label }} →</span>
+      </a>
+      {{- else }}
+      <div class="topic-card topic-card--empty" aria-disabled="true">
+        <div class="topic-card-top">
+          <h3>{{ .label }}</h3>
+          <span class="topic-badge">0</span>
+        </div>
+        <p>{{ .desc }}</p>
+        <span class="topic-link-hint topic-link-hint--muted">Articles coming soon</span>
+      </div>
+      {{- end }}
+      {{- end }}
+    </div>
+  </section>
+
+  <section class="home-recent" aria-label="Latest Posts">
+    <div class="section-label">
+      <h2>Latest Posts</h2>
+      <a href="{{ "posts/" | relLangURL }}">View all →</a>
+    </div>
+
+    <div class="home-stream">
+      {{- range first 5 $pages }}
+      <article class="home-row">
+        <div class="home-row-top">
+          <h3 class="home-row-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <time class="home-row-date" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{- .Date | time.Format ":date_medium" -}}
+          </time>
+        </div>
+        {{- with .Summary }}
+        <p class="home-row-summary">{{ . | plainify | truncate 140 }}</p>
+        {{- end }}
+      </article>
+      {{- end }}
+    </div>
+  </section>
+</div>
+{{- end }}

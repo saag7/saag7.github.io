@@ -2,3 +2,46 @@ baseURL = "https://saag7.github.io/"
 locale = "en-us"
 title = "Learning Blog"
 theme = "PaperMod"
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archives"
+  url = "/archives/"
+  weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 40
+
+[params]
+  mainSections = ["posts"]
+  ShowToc = true
+  TocOpen = false
+
+[params.homeInfoParams]
+  Title = "Welcome to My Blog"
+  Content = "Notes on systems engineering, machine learning, and practical tools—written as I build and test things."
+
+[[menu.main]]
+  identifier = "x"
+  name = "X"
+  url = "https://x.com/sakoag"
+  weight = 50
+

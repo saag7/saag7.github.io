@@ -6,6 +6,21 @@
     <description>Recent content in Tags on Learning Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 21 Nov 2026 09:30:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dev-Tooling-Cli-Agents</title>
+      <link>http://localhost:1313/tags/dev-tooling-cli-agents/</link>
+      <pubDate>Sat, 21 Nov 2026 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dev-tooling-cli-agents/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Evals-Tracing-Observability</title>
+      <link>http://localhost:1313/tags/evals-tracing-observability/</link>
+      <pubDate>Sat, 21 Nov 2026 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/evals-tracing-observability/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
